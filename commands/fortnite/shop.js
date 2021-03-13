@@ -1,4 +1,6 @@
 const Discord = require('discord.js')
+const superagent = require('superagent');
+
 module.exports = {
     name: "shop",
     aliases: ["aliase"],
@@ -8,6 +10,7 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
+        let { body } = await superagent.get("https://fortool.fr/cm/api/v1/shop")
         const Shop = new Discord.MessageEmbed()
 	    .setColor('#0099ff')
 	    .setTitle('Shop Fortnite')
