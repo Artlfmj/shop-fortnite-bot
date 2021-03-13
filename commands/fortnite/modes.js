@@ -14,7 +14,9 @@ module.exports = {
 
         if (!args.length) {
             return message.channel.send('Vous devez fournir un pseudo');
-          }
+          };
+
+        
         let { body } = await superagent.get('https://fortnite-api.com/v1/playlists');
 
         let Modes = new Discord.MessageEmbed()

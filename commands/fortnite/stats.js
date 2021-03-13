@@ -13,8 +13,17 @@ module.exports = {
         let { body } = await superagent.get('https://fortnite-api.com/v1/stats/br/v2');
 
         let Stats = new Discord.MessageEmbed()
-        .setTitle("Modes de jeux")
-        .setDescription(body.data.name)
+        .setTitle("Statistiques du joueur")
+        .setColor('#0099ff')
+        .setDescription('Voici les statistiques du joueur concerné')
+        .addFields(
+        { name: 'Regular field title', value: 'Some value here' },
+        { name: '​', value: '​' },
+        { name: 'Inline field title', value: 'Some value here', inline: true },
+        { name: 'Inline field title', value: 'Some value here', inline: true },
+        )
+        .setTimestamp()
+        .setFooter('Some footer text here', 'https://i.imgur.com/hnrWVnt.png');
         
         message.channel.send(Stats)
 
