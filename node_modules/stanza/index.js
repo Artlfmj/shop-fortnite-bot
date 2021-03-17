@@ -1,0 +1,33 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const Client_1 = tslib_1.__importDefault(require("./Client"));
+exports.Client = Client_1.default;
+const Constants = tslib_1.__importStar(require("./Constants"));
+exports.Constants = Constants;
+const RTT = tslib_1.__importStar(require("./helpers/RTT"));
+exports.RTT = RTT;
+const JID = tslib_1.__importStar(require("./JID"));
+exports.JID = JID;
+const Jingle = tslib_1.__importStar(require("./jingle"));
+exports.Jingle = Jingle;
+const JXT = tslib_1.__importStar(require("./jxt"));
+exports.JXT = JXT;
+const LibSASL = tslib_1.__importStar(require("./lib/sasl"));
+exports.SASL = LibSASL;
+const Namespaces = tslib_1.__importStar(require("./Namespaces"));
+exports.Namespaces = Namespaces;
+const Stanzas = tslib_1.__importStar(require("./protocol"));
+exports.Stanzas = Stanzas;
+const Utils = tslib_1.__importStar(require("./Utils"));
+exports.Utils = Utils;
+tslib_1.__exportStar(require("./helpers/StreamManagement"), exports);
+exports.VERSION = Constants.VERSION;
+const plugins_1 = tslib_1.__importDefault(require("./plugins"));
+tslib_1.__exportStar(require("./plugins"), exports);
+function createClient(opts) {
+    const client = new Client_1.default(opts);
+    client.use(plugins_1.default);
+    return client;
+}
+exports.createClient = createClient;

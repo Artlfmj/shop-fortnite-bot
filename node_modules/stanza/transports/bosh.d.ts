@@ -1,0 +1,32 @@
+import { Agent, Transport, TransportConfig } from '../';
+import StreamManagement from '../helpers/StreamManagement';
+import { Registry } from '../jxt';
+import { Stream } from '../protocol';
+export default class BOSHConnection implements Transport {
+    hasStream?: boolean;
+    stream?: Stream;
+    authenticated?: boolean;
+    sid?: string;
+    rid?: number;
+    private client;
+    private config;
+    private url?;
+    private sm;
+    private stanzas;
+    private closing?;
+    private sendBuffer;
+    private requests;
+    private maxRequests;
+    private maxHoldOpen;
+    private minPollingInterval;
+    private pollingInterval;
+    private idleTimeout;
+    private lastResponseTime;
+    constructor(client: Agent, sm: StreamManagement, stanzas: Registry);
+    connect(opts: TransportConfig): void;
+    disconnect(): void;
+    restart(): void;
+    send(dataOrName: string, data?: object): void;
+    private longPoll;
+    private request;
+}

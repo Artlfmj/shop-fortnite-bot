@@ -13,32 +13,32 @@ module.exports = {
         
         const arguments = message.content.slice(prefix.length).trim().split(' ');
 
-        let { body } = await superagent.get("https://fortnite-api.com/v1/map")
+        
         if (args[0] === 'normal') {
             let NormalMap = new Discord.MessageEmbed()
             .setTitle("Voici la map de Fortnite")
-            .setImage(body.data.images.blank)
+            .setImage("https://media.fortniteapi.io/images/map.png")
             .setTimestamp()
             .setColor("RANDOM")
-            .setFooter('Copyright Intermarket 2021', '../images/logo.png')
+            .setFooter('Copyright Intermarket 2021')
             message.channel.send(NormalMap)
         }
         else if (args[0] === 'poi') {
             let POIMap = new Discord.MessageEmbed()
             .setTitle("Voici la map de Fortnite")
-            .setImage(body.data.images.pois)
+            .setImage("https://media.fortniteapi.io/images/map.png?showPOI=true")
             .setTimestamp()
             .setColor("RANDOM")
-            .setFooter('Copyright Intermarket 2021', '../images/logo.png')
+            .setFooter('Copyright Intermarket 2021')
             message.channel.send(POIMap)
         }
         else if (!args.length) {
             let Map = new Discord.MessageEmbed()
             .setTitle("Voici la map de Fortnite")
-            .setImage(body.data.images.pois)
+            .setImage("https://media.fortniteapi.io/images/map.png?showPOI=true")
             .setTimestamp()
             .setColor("RANDOM")
-            .setFooter('Copyright Intermarket 2021', '../images/logo.png')
+            .setFooter('Copyright Intermarket 2021')
             message.channel.send(Map)
         }
     },
