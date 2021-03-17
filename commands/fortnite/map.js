@@ -20,7 +20,7 @@ module.exports = {
             .setImage(body.data.images.blank)
             .setTimestamp()
             .setColor("RANDOM")
-            .setFooter('Copyright Intermarket 2021', 'https://cdn.discordapp.com/attachments/745266722692530259/768033163880300574/logo.png')
+            .setFooter('Copyright Intermarket 2021', '../images/logo.png')
             message.channel.send(NormalMap)
         }
         else if (args[0] === 'poi') {
@@ -29,7 +29,7 @@ module.exports = {
             .setImage(body.data.images.pois)
             .setTimestamp()
             .setColor("RANDOM")
-            .setFooter('Copyright Intermarket 2021', 'https://cdn.discordapp.com/attachments/745266722692530259/768033163880300574/logo.png')
+            .setFooter('Copyright Intermarket 2021', '../images/logo.png')
             message.channel.send(POIMap)
         }
         else if (!args.length) {
@@ -38,7 +38,7 @@ module.exports = {
             .setImage(body.data.images.pois)
             .setTimestamp()
             .setColor("RANDOM")
-            .setFooter('Copyright Intermarket 2021', 'https://cdn.discordapp.com/attachments/745266722692530259/768033163880300574/logo.png')
+            .setFooter('Copyright Intermarket 2021', '../images/logo.png')
             message.channel.send(Map)
         }
     },

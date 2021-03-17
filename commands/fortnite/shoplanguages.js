@@ -16,6 +16,7 @@ module.exports = {
         .setTitle("Voici les langues disponibles pour le shop")
         .setColor("RANDOM")
         .setDescription(`FR : ${body.list.fr} \nES : ${body.list.es} \nDE : ${body.list.it} \nFR : ${body.list.it} \nAR : ${body.list.ar} \n`)
+        .setFooter("SHOP BOT" , '../images/logo.png')
         message.channel.send(ShopLanguages)
     },
 };

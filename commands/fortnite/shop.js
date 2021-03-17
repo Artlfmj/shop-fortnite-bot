@@ -14,11 +14,11 @@ module.exports = {
         const Shop = new Discord.MessageEmbed()
 	    .setColor('#0099ff')
 	    .setTitle('Shop Fortnite')
-	    .setAuthor('Shop Bot par Artlfmj#0310', 'https://imgur.com/a/NyPT4RO', 'https://www.youtube.com/channel/UCLee-XQyphWxB7mQ_beGIyg')
+	    .setAuthor('Shop Bot par Artlfmj#0310', '../images/logo.png', 'https://www.youtube.com/channel/UCLee-XQyphWxB7mQ_beGIyg')
 	    .setDescription(`Shop Fortnite du jour: `)
         .setImage(body.images.default)
         .setTimestamp()
-	    .setFooter('Copyright Intermarket 2021', 'https://cdn.discordapp.com/attachments/745266722692530259/768033163880300574/logo.png');
+	    .setFooter('Copyright Intermarket 2021', '../images/logo.png');
 
         message.channel.send(Shop);
     },
