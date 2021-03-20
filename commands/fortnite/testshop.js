@@ -17,13 +17,7 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-        const image = await shop
-        .setToken("641457d7-5f49-47cb-8fe1-b5f5abddc469")
-        .toAttachment();
- 
-        let attachment = new Discord.MessageAttachment(image, "FortniteShop.png");
- 
-        message.channel.send(attachment);
+       
         
     } 
     
