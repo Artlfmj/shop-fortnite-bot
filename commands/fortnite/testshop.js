@@ -17,7 +17,7 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-       
+       t
         
     } 
     
