@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     //definition
     name: "bot-info", //the name of the command 
-    category: "bot", //the category this will be listed at, for the help cmd
+    category: "info", //the category this will be listed at, for the help cmd
     aliases: ["botinfo"], //every parameter can be an alias
     cooldown: 2, //this will set it to a 2 second cooldown
     usage: "botinfo", //this is for the help command for EACH cmd
