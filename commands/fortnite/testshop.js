@@ -2,14 +2,11 @@
 
 const Discord = require('discord.js')
 const superagent = require('superagent');
-var http = require('http');
-const { stripIndents } = require("common-tags");
-const fetch = require('node-fetch');
-const fs = require('fs')
-const winston = require('winston')
-
-const Client = require("fortnite");
-const ft = new Client(process.env.fntracker);
+const Client = require('fortnite');
+const fortnite = new Client('c90fc89e-52fb-4fb5-a97d-9bcd26671800');
+const FortniteAPI = require("fortnite-api-io");
+const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
+const Canvas = require("discord-canvas");
 
 module.exports = {
     name: "testshop",
@@ -20,21 +17,14 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-
+        const image = await shop
+        .setToken("641457d7-5f49-47cb-8fe1-b5f5abddc469")
+        .toAttachment();
+ 
+        let attachment = new Discord.MessageAttachment(image, "FortniteShop.png");
+ 
+        message.channel.send(attachment);
         
-        
-        let { body } = await superagent.get("https://fortnite-api.com/v2/shop/br")
-        const jsonString = JSON.stringify(body)
-        
-        fs.writeFile('./shop.json', jsonString, err => {
-        if (err) {
-            console.log('Error writing file', err)
-        } 
-        else{
-            console.log('Successfully wrote file')
-        }
-        
-        })  
     } 
     
 }
