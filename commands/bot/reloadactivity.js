@@ -43,5 +43,8 @@ module.exports = {
                 break;
     }});   
     }
+    else{
+        message.channel.send("ERREUR | Vous n'avez pas accés a cette fonctionnalité. Veuillez ne pas refaire cette commande sous peine de whitelist de nos services")
+    }
 }
 }

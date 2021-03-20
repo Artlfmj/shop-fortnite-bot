@@ -12,15 +12,16 @@ module.exports = {
 
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
-        
+        let guild = message.guild
         let ServerEmbed = new Discord.MessageEmbed()
         .setAuthor(message.guild.name)
-        .setThumbnail(message.guild.iconUrl())
+        .setThumbnail(guild.iconURL({ dynamic: true }))
         .addField(`Nom du serveur`, (message.guild.name))
         .addField(`Propriétaire`, message.guild.owner)
         .addField(`Nombre de membres`, message.guild.memberCount)
         .addField(`Nombre de roles`, message.guild.roles.cache.size)
         .setFooter('Demandé par ' + message.author.username)
+        .addField('Boosts', guild.premiumSubscriptionCount)
     
         message.channel.send(ServerEmbed)
     }
