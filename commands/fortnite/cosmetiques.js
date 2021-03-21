@@ -20,6 +20,7 @@ module.exports = {
         .setTitle("Cosmetiques")
         .setDescription(body.data.name)
         .setImage(body.data.images.icon)
+        .setFooter('Copyright Intermarket 2021', '../images/logo.png')
         
         message.channel.send(Cosmetiques)
 

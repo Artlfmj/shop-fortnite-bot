@@ -19,7 +19,7 @@ module.exports = {
         .setImage(body.data.image)
         .setColor("RANDOM")
         .setTimestamp()
-        .setFooter('Copyright Intermarket 2021', 'https://cdn.discordapp.com/attachments/745266722692530259/768033163880300574/logo.png')
+        .setFooter('Copyright Intermarket 2021', '../images/logo.png')
         
         message.channel.send(News)
 

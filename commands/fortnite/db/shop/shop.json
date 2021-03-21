@@ -1,0 +1,13 @@
+{
+    "body": {
+        "result": true,
+        "refresh": {
+            "api": "2021-03-20T00:05:06.000Z",
+            "image": "2021-03-20T00:07:23.080Z"
+        },
+        "images": {
+            "default": "https://fortool.fr/cm/assets/shop/fr.png",
+            "carousel": "https://fortool.fr/cm/assets/shop/carousel/fr.png"
+        }
+    }
+}

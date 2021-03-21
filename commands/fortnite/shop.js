@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const superagent = require('superagent');
+const fs = require('fs');
 
 module.exports = {
     name: "shop",
@@ -14,12 +15,19 @@ module.exports = {
         const Shop = new Discord.MessageEmbed()
 	    .setColor('#0099ff')
 	    .setTitle('Shop Fortnite')
-	    .setAuthor('Shop Bot par Artlfmj#0310', 'https://imgur.com/a/NyPT4RO', 'https://www.youtube.com/channel/UCLee-XQyphWxB7mQ_beGIyg')
+	    .setAuthor('Shop Bot par Artlfmj#0310')
 	    .setDescription(`Shop Fortnite du jour: `)
         .setImage(body.images.default)
         .setTimestamp()
-	    .setFooter('Copyright Intermarket 2021', 'https://cdn.discordapp.com/attachments/745266722692530259/768033163880300574/logo.png');
+	    .setFooter('Copyright Intermarket 2021');
 
         message.channel.send(Shop);
-    },
+        var sampleObject = { body };
+    
+
+        fs.writeFile("./commands/fortnite/db/shop/shop.json", JSON.stringify(sampleObject, null, 4), (err) => {
+            if (err) {  console.error(err);  return; };
+            console.log("File has been created");
+        });
+        },
 };
