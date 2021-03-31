@@ -16,7 +16,7 @@ module.exports = {
            const minecraft = await superagent.get("https://status.mojang.com/check")
            const Status = new Discord.MessageEmbed()
            .setTitle("Status des serveurs Minecraft")
-           .addField("Minecraft.net", minecraft.minecraft.net)
+           .addField("Minecraft.net", minecraft.minecraft)
            message.channel.send(minecraft)
        }
     }

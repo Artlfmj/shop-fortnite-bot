@@ -2,11 +2,9 @@
 
 const Discord = require('discord.js')
 const superagent = require('superagent');
-const Client = require('fortnite');
-const fortnite = new Client('c90fc89e-52fb-4fb5-a97d-9bcd26671800');
-const FortniteAPI = require("fortnite-api-io");
-const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
+
 const Canvas = require("discord-canvas");
+var Buffer = require('buffer');
 
 module.exports = {
     name: "testshop",
@@ -17,29 +15,31 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-        const m = await message.channel.send("PLEASE_WAIT")
-
+		let member = message.author
 		
-		const shop = new Canvas.FortniteShop();
-		const image = await shop
-			.setToken("641457d7-5f49-47cb-8fe1-b5f5abddc469")
-			.setText("header")
-			.setText("daily")
-			.setText("featured")
-			.setText("date")
-			.setText("footer")
-			.toAttachment();
-		const attachment = new Discord.MessageAttachment(image, "shop.png");
 
-		const embed = new Discord.MessageEmbed()
-			
-			.attachFiles(attachment)
-			.setImage("attachment://shop.png")
-			.setColor("RANDOM")
-			.setFooter("TEST");
-		await message.channel.send(embed);
-		await m.delete();
-		return;
+        let avatar = member.displayAvatarURL({
+            dynamic: true,
+            size: 512,
+            format: "png",
+        })
+        const image = await new Canvas.Welcome()
+        .setUsername(member.username)
+        .setDiscriminator(member.tag)
+        .setMemberCount("8")
+        .setGuildName("TECHN'CODE")
+        .setAvatar(avatar)
+        .setColor("border", "#8015EA")
+        .setColor("username-box", "#8015EA")
+        .setColor("discriminator-box", "#8015EA")
+        .setColor("message-box", "#8015EA")
+        .setColor("title", "#8015EA")
+        .setColor("avatar", "#8015EA")
+        .setBackground("https://img.freepik.com/photos-gratuite/fond-aquarelle-peint-main-forme-ciel-nuages_24972-1095.jpg?size=626&ext=jpg")
+        .toAttachment();
+    
+        const attachment = new Discord.MessageAttachment(await image.toAttachment(), "welcome-image.png");
+        message.channel.send(attachment);
         
 	}
         
