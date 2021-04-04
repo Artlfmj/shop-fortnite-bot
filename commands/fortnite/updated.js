@@ -36,7 +36,7 @@ module.exports = {
         else if (!args.length) {
             let Map = new Discord.MessageEmbed()
             .setTitle("Voici les sometiques mis à jour dans la derniere version")
-            .setImage("https://media.fortniteapi.io/images/map.png?showPOI=true")
+            .setImage("https://shopbot.ml/assets/updated/1610update.jpeg")
             .setTimestamp()
             .setColor("RANDOM")
             .setFooter('Copyright Intermarket 2021')
