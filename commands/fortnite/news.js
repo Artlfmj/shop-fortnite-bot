@@ -40,7 +40,7 @@ module.exports = {
             .setFooter('Copyright Intermarket 2021')
             message.channel.send(News)
         }
-        else if(args[0] === " "){
+        else if (!args.length) {
             let News = new Discord.MessageEmbed()
             .setTitle("News")
             .setImage(body.data.br.image)
