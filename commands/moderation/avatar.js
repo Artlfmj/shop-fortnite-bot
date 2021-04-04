@@ -11,6 +11,7 @@ module.exports = {
 
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
+        message.delete();
                 if (!message.guild.member(client.user).hasPermission("EMBED_LINKS"))return message.channel.send("ERREUR : il me manque la permission ``Intégrer des liens`` pour utiliser l'ensemble de mes commandes (sinon elles ne savent pas d'afficher)"
         );
         if (!message.guild.member(client.user).hasPermission("ATTACH_FILES"))

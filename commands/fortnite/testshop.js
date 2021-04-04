@@ -16,7 +16,7 @@ module.exports = {
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
 		let member = message.author
-		
+		message.delete();
 
         let avatar = member.displayAvatarURL({
             dynamic: true,

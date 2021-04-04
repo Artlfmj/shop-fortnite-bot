@@ -13,6 +13,7 @@ module.exports = {
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
        if(args[0] === "minecraft"){
+        message.delete();
            const minecraft = await superagent.get("https://status.mojang.com/check")
            const Status = new Discord.MessageEmbed()
            .setTitle("Status des serveurs Minecraft")

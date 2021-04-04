@@ -12,7 +12,7 @@ module.exports = {
     run: async (client, message, args, user, text, prefix) => {
         
         const arguments = message.content.slice(prefix.length).trim().split(' ');
-
+        message.delete();
         
         if (args[0] === 'normal') {
             let NormalMap = new Discord.MessageEmbed()

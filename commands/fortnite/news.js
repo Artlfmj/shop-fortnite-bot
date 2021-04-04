@@ -11,7 +11,7 @@ module.exports = {
     usage: "actus",
     run: async (client, message, args, user, text, prefix) => {
         const arguments = message.content.slice(prefix.length).trim().split(' ');
-
+        message.delete();
         let { body } = await superagent.get('https://fortnite-api.com/v2/news');
         if(args[0] === "br"){
             const News = new Discord.MessageEmbed()

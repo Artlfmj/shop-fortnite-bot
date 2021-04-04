@@ -12,6 +12,7 @@ module.exports = {
 
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
+        message.delete();
         let guild = message.guild
         let ServerEmbed = new Discord.MessageEmbed()
         .setAuthor(message.guild.name)

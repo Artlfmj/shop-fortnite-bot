@@ -11,7 +11,7 @@ module.exports = {
     usage: "modes",
     run: async (client, message, args, user, text, prefix) => {
         const arguments = message.content.slice(prefix.length).trim().split(' ');
-
+        message.delete();
         if (!args.length) {
             return message.channel.send('Vous devez fournir un pseudo');
           };
