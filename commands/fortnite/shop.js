@@ -11,6 +11,7 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
+        message.channel.startTyping();
         let { body } = await superagent.get("https://fortool.fr/cm/api/v1/shop?lang=fr")
         const Shop = new Discord.MessageEmbed()
 	    .setColor('#0099ff')
@@ -22,6 +23,7 @@ module.exports = {
 	    .setFooter('Copyright Intermarket 2021');
 
         message.channel.send(Shop);
+        message.channel.stopTyping();
         var sampleObject = { body };
     
 
