@@ -12,18 +12,23 @@ module.exports = {
 
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
+        message.channel.startTyping()
         message.delete();
         let guild = message.guild
         let ServerEmbed = new Discord.MessageEmbed()
-        .setAuthor(message.guild.name)
         .setThumbnail(guild.iconURL({ dynamic: true }))
-        .addField(`Nom du serveur`, (message.guild.name))
-        .addField(`Propriétaire`, message.guild.owner)
-        .addField(`Nombre de membres`, message.guild.memberCount)
-        .addField(`Nombre de roles`, message.guild.roles.cache.size)
+        .setTitle(`${message.guild.name} (${guild.id})`)
+        .addField(`Propriétaire`, message.guild.owner, true)
+        .addField(`Nombre de membres`, message.guild.memberCount, true)
+        .addField(`Nombre de roles`, message.guild.roles.cache.size, true)
         .setFooter('Demandé par ' + message.author.username)
-        .addField('Boosts', guild.premiumSubscriptionCount)
+        .addField('Boosts', guild.premiumSubscriptionCount, true)
+        .addField('Région du serveur', guild.region, true)
+        .addField('Créé le', guild.createdAt.toLocaleString(), true)
+        .addField('ID du serveur', guild.id, true)
+        .setTimestamp()
     
         message.channel.send(ServerEmbed)
+        message.channel.stopTyping()
     }
 }
