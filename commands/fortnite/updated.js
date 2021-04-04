@@ -15,27 +15,27 @@ module.exports = {
 
         
         if (args[0] === 'last') {
-            const attachment = new Discord.MessageAttachment('./db/updated/1610updated.jpeg', '1610.jpeg');
+            
             let Lastupdated = new Discord.MessageEmbed()
-            .setTitle("Voici les cosmetiques mis à jour dans cette version")
-	        .setImage('attachment://1610.jpeg')
+            .setTitle("Voici les cosmetiques mis à jour dans la derniere version")
+	        .setImage('https://shopbot.ml/assets/updated/1610update.jpeg')
             .setTimestamp()
             .setColor("RANDOM")
             .setFooter('Copyright Intermarket 2021')
             message.channel.send(Lastupdated)
         }
-        else if (args[0] === 'poi') {
-            let POIMap = new Discord.MessageEmbed()
-            .setTitle("Voici la map de Fortnite")
-            .setImage("https://media.fortniteapi.io/images/map.png?showPOI=true")
+        else if (args[0] === '16.10') {
+            let Update = new Discord.MessageEmbed()
+            .setTitle("Voici les cosmetiques mis à jour dans cette version")
+            .setImage("https://shopbot.ml/assets/updated/1610update.jpeg")
             .setTimestamp()
             .setColor("RANDOM")
             .setFooter('Copyright Intermarket 2021')
-            message.channel.send(POIMap)
+            message.channel.send(Update)
         }
         else if (!args.length) {
             let Map = new Discord.MessageEmbed()
-            .setTitle("Voici la map de Fortnite")
+            .setTitle("Voici les sometiques mis à jour dans la derniere version")
             .setImage("https://media.fortniteapi.io/images/map.png?showPOI=true")
             .setTimestamp()
             .setColor("RANDOM")
