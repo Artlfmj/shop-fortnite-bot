@@ -12,7 +12,7 @@ module.exports = {
 
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
-        
+        message.delete();
        const { body } = await superagent.get(`https://minecraft-api.com/api/skins/${args[0]}/body/10.5/10/10.25/25.12/12/json`)
        console.log(body)
        const Embed = new Discord.MessageEmbed()

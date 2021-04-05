@@ -11,7 +11,7 @@ module.exports = {
     usage: "Get languages",
     run: async (client, message, args, user, text, prefix) => {
         let { body } = await superagent.get('https://fortool.fr/cm/api/v1/shop/supported');
-
+        message.delete();
         let ShopLanguages = new Discord.MessageEmbed()
         .setTitle("Voici les langues disponibles pour le shop")
         .setColor("RANDOM")

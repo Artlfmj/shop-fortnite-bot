@@ -11,7 +11,7 @@ module.exports = {
     usage: "stats",
     run: async (client, message, args, user, text, prefix) => {
         let { body } = await superagent.get('https://fortnite-api.com/v1/stats/br/v2');
-
+        message.delete();
         let Stats = new Discord.MessageEmbed()
         .setTitle("Statistiques du joueur")
         .setColor('#0099ff')

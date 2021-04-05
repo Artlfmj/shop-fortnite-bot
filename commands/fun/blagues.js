@@ -15,7 +15,7 @@ module.exports = {
     cooldown: 2,
     usage: "modes",
     run: async (client, message, args, user, text, prefix) => {
-    
+        message.delete();
         let url = 'https://www.blagues-api.fr/api/' + (args[0] ? ("type/" + args[0] + '/random') : 'random');
             request(url, {
                     headers: {

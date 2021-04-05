@@ -79,7 +79,7 @@ client.on("message", async message => {
                     prefix is: <config.prefix:   !>
         */ ///////////////////////////////////////////////////////
       }catch (error){
-        console.error(error)
+        console.log(error)
         return message.reply("Something went wrong while, running the: `" + command.name + "` command")
       }
     } 

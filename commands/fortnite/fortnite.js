@@ -12,7 +12,7 @@ module.exports = {
     usage: "<username | store>",
     run: async (client, message, args) => {
         const platforms = ["pc", "xb1", "psn"];
-        
+        message.delete();
         if (args[0].toLowerCase() === "store") {
             const store = await ft.store();
 
@@ -29,6 +29,7 @@ module.exports = {
                 embed.addField(el.name, stripIndents`**- Rarity:** ${el.rarity}
                 **- Price:** ${el.vbucks} v-bucks
                 **- Image:** [Press Me](${el.image})`, true)
+                
             });
 
             message.channel.send(embed);
