@@ -15,7 +15,8 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-		
+		const info = await superagent.get("https://shopbot.ml/assets/api/status.json")
+        console.log(info.body)
         
 	}
         
