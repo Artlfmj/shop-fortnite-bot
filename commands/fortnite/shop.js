@@ -16,6 +16,9 @@ module.exports = {
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
         message.delete();
+        const Wait = new Discord.MessageEmbed()
+        .setTitle("VEUILLEZ PATIENTER | Le shop est en cours de chargement")
+        const msg = await message.channel.send(Wait); 
         message.channel.startTyping();
         let { body } = await superagent.get("https://fortool.fr/cm/api/v1/shop?lang=fr")
         const Shop = new Discord.MessageEmbed()
@@ -37,6 +40,7 @@ module.exports = {
             embed.addField(el.name, stripIndents`**- Rarity:** ${el.rarity}
             **- Price:** ${el.vbucks} v-bucks`, true)
         });
+        msg.delete()
         message.channel.send(Shop);
         message.channel.send(embed)
         message.channel.stopTyping();
