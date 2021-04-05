@@ -1,6 +1,10 @@
 const Discord = require('discord.js')
 const superagent = require('superagent');
+const { stripIndents } = require("common-tags");
 const fs = require('fs');
+const Client = require("fortnite");
+const ft = new Client("c90fc89e-52fb-4fb5-a97d-9bcd26671800");
+
 
 module.exports = {
     name: "shop",
@@ -15,22 +19,27 @@ module.exports = {
         message.channel.startTyping();
         let { body } = await superagent.get("https://fortool.fr/cm/api/v1/shop?lang=fr")
         const Shop = new Discord.MessageEmbed()
-	    .setColor('#0099ff')
+	    .setColor('#2f3136')
 	    .setTitle('Shop Fortnite')
-	    .setAuthor('Shop Bot par Artlfmj#0310')
+	    .setAuthor('Shop Bot s!shop', "https://shopbot.ml/assets/bot/logo.png" )
 	    .setDescription(`Shop Fortnite du jour: `)
         .setImage(body.images.default)
         .setTimestamp()
-	    .setFooter('Copyright Intermarket 2021');
-
-        message.channel.send(Shop);
-        message.channel.stopTyping();
-        var sampleObject = { body };
-    
-
-        fs.writeFile("./commands/fortnite/db/shop/shop.json", JSON.stringify(sampleObject, null, 4), (err) => {
-            if (err) {  console.error(err);  return; };
-            console.log("File has been created");
+	    .setFooter('© Copyright SHOP 2021', "https://shopbot.ml/assets/bot/logo.png" );
+        const store = await ft.store();
+        const embed = new Discord.MessageEmbed()
+        .setTitle("CONTENU DU SHOP")
+        .setColor("BLUE")
+        store.sort((a, b) => {
+            return b.vbucks - a.vbucks;
         });
+        store.forEach(el => {
+            embed.addField(el.name, stripIndents`**- Rarity:** ${el.rarity}
+            **- Price:** ${el.vbucks} v-bucks`, true)
+        });
+        message.channel.send(Shop);
+        message.channel.send(embed)
+        message.channel.stopTyping();
+    
         },
 };

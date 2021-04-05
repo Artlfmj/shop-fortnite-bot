@@ -29,6 +29,7 @@ module.exports = {
                 embed.addField(el.name, stripIndents`**- Rarity:** ${el.rarity}
                 **- Price:** ${el.vbucks} v-bucks
                 **- Image:** [Press Me](${el.image})`, true)
+                
             });
 
             message.channel.send(embed);
