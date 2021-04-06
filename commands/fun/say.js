@@ -14,9 +14,11 @@ module.exports = {
         if(message.member.hasPermission("ADMINISTRATOR")){
             message.delete();	
             message.channel.send(text)
-            break;
+            
         }
-        else 
+        else {
+            message.channel.send("Vous n'avez pas les permissions nécessaires.")
+        }
          //you could also do:  message.channel.send(args.join(" "))
         //another example: message.channel.send(user + "send the message: " + text)
     }
