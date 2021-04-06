@@ -11,8 +11,13 @@ module.exports = {
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
         //EVERTHING in HERE CAN BE A PART OF THE COMMAND
-        message.delete();	
-        message.channel.send(text) //you could also do:  message.channel.send(args.join(" "))
+        if(message.member.hasPermission("ADMINISTRATOR")){
+            message.delete();	
+            message.channel.send(text)
+            break;
+        }
+        else 
+         //you could also do:  message.channel.send(args.join(" "))
         //another example: message.channel.send(user + "send the message: " + text)
     }
 }
