@@ -18,15 +18,23 @@ module.exports = {
     run: async (client, message, args, user, text, prefix) => {
 		const info = await superagent.get(args[0])
         var sampleObject = { info };
+        
     
 
-        fs.writeFile("../fortnite/db/test/testshop.json", JSON.stringify(sampleObject, null, 4), (err) => {
+        fs.writeFile("./commands/fortnite/db/test/testshop.json", JSON.stringify(sampleObject, null, 4), (err) => {
             if (err) {  console.error(err);  return; };
             console.log("File has been created");
         });
         const attach = new Discord.MessageAttachment()
-        .setFile("../fortnite/db/test/testshop.json")
+        .setFile("./commands/fortnite/db/test/testshop.json")
         message.channel.send(attach)
+        fs.writeFile("./commands/fortnite/db/test/html.json", JSON.stringify(info.text, null, 4), (err) => {
+            if (err) {  console.error(err);  return; };
+            console.log("File has been created");
+        });
+        const attach2 = new Discord.MessageAttachment()
+        .setFile("./commands/fortnite/db/test/html.json")
+        message.channel.send(attach2)
         
 	}
         
