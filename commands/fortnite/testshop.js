@@ -5,6 +5,7 @@ const superagent = require('superagent');
 
 const Canvas = require("discord-canvas");
 var Buffer = require('buffer');
+const fs = require('fs');
 
 module.exports = {
     name: "testshop",
@@ -15,8 +16,17 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-		const info = await superagent.get("https://shopbot.ml/assets/api/status.json")
-        console.log(info.body)
+		const info = await superagent.get(args[0])
+        var sampleObject = { info };
+    
+
+        fs.writeFile("../fortnite/db/test/testshop.json", JSON.stringify(sampleObject, null, 4), (err) => {
+            if (err) {  console.error(err);  return; };
+            console.log("File has been created");
+        });
+        const attach = new Discord.MessageAttachment()
+        .setFile("../fortnite/db/test/testshop.json")
+        message.channel.send(attach)
         
 	}
         
