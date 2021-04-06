@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const superagent = require('superagent');
 
 module.exports = {
-    name: "newsbeta",
+    name: "betanews",
     aliases: ["actusbeta"],
     description: "Envoie actus",
     category: "fortnite",
@@ -12,14 +12,21 @@ module.exports = {
     run: async (client, message, args, user, text, prefix) => {
         
         const arguments = message.content.slice(prefix.length).trim().split(' ');
-        message.delete()
-        if(arguments[0] === "br"){
-            let { br } = await superagent.get('https://fortnite-api.com/v2/news/br');
-            console.log("fetch br")
-            if(br.status === '200'){
+        const br = await superagent.get('https://fortnite-api.com/v2/news/br')
+        console.log("fetch br")
+        const stw = await superagent.get('https://fortnite-api.com/v2/news/stw');
+        console.log("fetch stw")
+        const creative = await superagent.get('https://fortnite-api.com/v2/news/creative');
+        console.log("fetch creative")
+       
+        if(arguments[1] === "br"){
+            console.log("1")
+            
+            if(br.status === "200"){
+                console.log("2")
                 const News = new Discord.MessageEmbed()
                 .setTitle("News")
-                .setImage(br.data.image)
+                .setImage(br.text.data.image)
                 .setColor("RANDOM")
                 .setTimestamp()
                 .setFooter('Copyright Intermarket 2021')
@@ -38,8 +45,7 @@ module.exports = {
             
         }
         else if(arguments[0] === "stw"){
-            let {  stw } = await superagent.get('https://fortnite-api.com/v2/news/stw');
-            console.log("fetch stw")
+            
             if(stw.status === "200"){
                 let News = new Discord.MessageEmbed()
                 .setTitle("News")
@@ -62,8 +68,7 @@ module.exports = {
         }
         
         else if(arguments[0] === "creative"){
-            let { creative } = await superagent.get('https://fortnite-api.com/v2/news/creative');
-            console.log("fetch creative")
+            
             if(creative.status === "200"){
                 let News = new Discord.MessageEmbed()
                 .setTitle("News")
