@@ -16,6 +16,7 @@
     "http": "0.0.1-security",
     "jsonfile": "^6.1.0",
     "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
     "superagent": "^6.1.0",
     "winston": "^3.3.3"
   },
