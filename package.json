@@ -10,6 +10,7 @@
     "discord.js": "^12.5.1",
     "fnbr": "^1.4.1",
     "fortnite": "^4.3.2",
+    "fortnite-api-com": "^2.2.1",
     "fortnite-api-io": "^1.8.0",
     "fs": "0.0.1-security",
     "got": "^11.8.1",
