@@ -16,25 +16,8 @@ module.exports = {
     cooldown: 2,
     usage: "s!shop",
     run: async (client, message, args, user, text, prefix) => {
-		const info = await superagent.get(args[0])
-        var sampleObject = { info };
-        
-    
-
-        fs.writeFile("./commands/fortnite/db/test/testshop.json", JSON.stringify(sampleObject, null, 4), (err) => {
-            if (err) {  console.error(err);  return; };
-            console.log("File has been created");
-        });
-        const attach = new Discord.MessageAttachment()
-        .setFile("./commands/fortnite/db/test/testshop.json")
-        message.channel.send(attach)
-        fs.writeFile("./commands/fortnite/db/test/html.json", JSON.stringify(info.text, null, 4), (err) => {
-            if (err) {  console.error(err);  return; };
-            console.log("File has been created");
-        });
-        const attach2 = new Discord.MessageAttachment()
-        .setFile("./commands/fortnite/db/test/html.json")
-        message.channel.send(attach2)
+		let { image } = await superagent.get('https://api.nitestats.com/v1/shop/image/footer=CODE-LFMRD')
+        message.channel.send(image)
         
 	}
         
