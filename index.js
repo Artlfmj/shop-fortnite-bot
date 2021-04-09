@@ -4,10 +4,13 @@ const config = require("./config.json"); //loading config file with token and pr
 const prefix = (config.prefix); //defining the prefix as a constant variable
 const fs = require("fs"); //this package is for reading files and getting their inputs
 
+
 const client = new Client({
     disableEveryone: true,  //disables, that the bot is able to send @everyone
-    partials: ['MESSAGE', 'CHANNEL', 'REACTION'] //creating the client with partials, so you can fetch OLD messages
+    partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+    
 }); 
+
 
 client.commands = new Collection(); //an collection (like a digital map(database)) for all your commands
 client.aliases = new Collection(); //an collection for all your command-aliases
@@ -87,5 +90,7 @@ client.on("message", async message => {
     return message.reply(`Unkown command, try: **\`${prefix}help\`**`)
     
 });
+
+
 
 client.login(config.token); //login into the bot
