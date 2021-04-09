@@ -1,5 +1,13 @@
 const Discord = require('discord.js')
 const superagent = require('superagent');
+const FortniteAPI = require("fortnite-api-com");
+const configfortnite = {
+    apikey: "API-Key",
+    language: "fr",
+    debug: true
+  };
+
+var Fortnite = new FortniteAPI(configfortnite);
 
 module.exports = {
     name: "actus",
@@ -11,15 +19,14 @@ module.exports = {
     usage: "actus",
     run: async (client, message, args, user, text, prefix) => {
         const arguments = message.content.slice(prefix.length).trim().split(' ');
-
-        let { body } = await superagent.get('https://fortnite-api.com/v2/news/br');
+        const body = await Fortnite.NewsBR('fr')
 
         let News = new Discord.MessageEmbed()
         .setTitle("News")
         .setImage(body.data.image)
-        .setColor("RANDOM")
+        .setColor("#2f3136")
         .setTimestamp()
-        .setFooter('Copyright Intermarket 2021')
+        .setFooter('© Copyright Shop 2021', "https://shopbot.ml/assets/bot/logo.png")
         
         message.channel.send(News)
 
