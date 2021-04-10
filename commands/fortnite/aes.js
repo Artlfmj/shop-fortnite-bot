@@ -25,11 +25,14 @@ module.exports = {
        
         const AES = await Fortnite.AES()
         const aes = new Discord.MessageEmbed()
-        .setTitle("Clé AES de la version actuelle")
-        .setDescription(AES.data.mainKey)
+        .setTitle("Clés AES Disponibles")
+        .setDescription("Ici vous pourrez trouver toutes les clés AES disponibles à ce jour")
+        .addField("Version principale:", AES.data.mainKey,true)
+        .setColor("#2f3136")
         const dyn = AES.data.dynamicKeys
-        AES.data.dynamicKeys.forEach().aes.addField(dyn.pakFilename, dyn.key, true )
-        
-        message.channel.send(AES.data.mainKey)
+        dyn.forEach(dyn => {
+            aes.addField(dyn.pakFilename, dyn.key, false )
+        });
+        message.channel.send(aes)
     }
 }
