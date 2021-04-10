@@ -7,7 +7,7 @@ const configfortnite = {
     debug: true
   };
 
-var Fortnite = new FortniteAPI(configfortnite);
+const Fortnite = new FortniteAPI(configfortnite);
 
 
 module.exports = {
@@ -24,7 +24,12 @@ module.exports = {
         
        
         const AES = await Fortnite.AES()
-
+        const aes = new Discord.MessageEmbed()
+        .setTitle("Clé AES de la version actuelle")
+        .setDescription(AES.data.mainKey)
+        const dyn = AES.data.dynamicKeys
+        AES.data.dynamicKeys.forEach().aes.addField(dyn.pakFilename, dyn.key, true )
+        
         message.channel.send(AES.data.mainKey)
     }
 }

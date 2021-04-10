@@ -32,7 +32,7 @@ module.exports = {
         const store = await ft.store();
         const embed = new Discord.MessageEmbed()
         .setTitle("CONTENU DU SHOP")
-        .setColor("BLUE")
+        .setColor("DARK BLUE")
         store.sort((a, b) => {
             return b.vbucks - a.vbucks;
         });

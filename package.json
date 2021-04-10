@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "ascii-table": "^0.0.9",
+    "canvas": "^2.7.0",
     "common-tags": "^1.8.0",
     "discord-canvas": "^1.4.1",
     "discord.js": "^12.5.1",
