@@ -1,4 +1,5 @@
 //Here the command starts
+const Discord = require("discord.js")
 module.exports = {
     //definition
     name: "ping", //the name of the command 
@@ -11,9 +12,24 @@ module.exports = {
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
         //creating a temporary message
-        const msg = await message.channel.send(`🏓 Pinging....`); 
+        const pong = new Discord.MessageEmbed()
+        .setTitle("Chargement des statistiques...")
+        .setColor("#2f3136")
+        const msg = await message.channel.send(pong); 
         //editing it to the actual latency
-        msg.edit(`🏓 Pong!
-        Ping is ${Math.round(client.ws.ping)}ms`);
+        const Ping = new Discord.MessageEmbed()
+        .setTitle(`Le ping du bot est de ${Math.round(client.ws.ping)}ms`)
+        .setColor("#2f3136")
+        msg.edit(Ping)
+        const log = new Discord.MessageEmbed()
+        .setTitle(`Utilisation de la commande Ping | ${client.user.username}`)
+        .setTimestamp()
+        .setDescription(`La commande ping a été utilisée`) 
+        .addField("Salon d'utilisation", message.channel, true)
+        .addField("Utilisateur", message.author.username, true)
+        .addField("Serveur", message.guild.name, true)
+        .addField("Date", new Date(), true)
+        .setColor("BLUE")
+        client.channels.cache.get("828915153432084510").send(log)
     }
 }

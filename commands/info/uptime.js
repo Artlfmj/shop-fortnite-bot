@@ -12,6 +12,7 @@ module.exports = {
     //running the command with the parameters: client, message, args, user, text, prefix
     run: async (client, message, args, user, text, prefix) => {
         // a sub function to get the time    
+        message.channel.startTyping()
         function duration(ms) {
             const sec = Math.floor((ms / 1000) % 60).toString()
             const min = Math.floor((ms / (1000 * 60)) % 60).toString()
@@ -28,5 +29,16 @@ module.exports = {
         .setFooter(`${client.user.tag}`, client.user.displayAvatarURL)
         .setColor("RANDOM")
         message.channel.send(uptime)
+        message.channel.stopTyping()
+        const log = new Discord.MessageEmbed()
+        .setTitle(`Utilisation de la commande Uptime | ${client.user.username}`)
+        .setTimestamp()
+        .setDescription(`La commande Uptime a été utilisée`) 
+        .addField("Salon d'utilisation", message.channel, true)
+        .addField("Utilisateur", message.author.username, true)
+        .addField("Serveur", message.guild.name, true)
+        .addField("Date", new Date(), true)
+        .setColor("BLUE")
+        client.channels.cache.get("828915153432084510").send(log)
     }
 }
