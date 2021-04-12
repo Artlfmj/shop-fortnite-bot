@@ -10,25 +10,72 @@ const configfortnite = {
 var Fortnite = new FortniteAPI(configfortnite);
 
 module.exports = {
-    name: "actus",
-    aliases: ["news"],
+    name: "news",
+    aliases: ["actus"],
     description: "Envoie actus",
     category: "fortnite",
     guildOnly: true,
     cooldown: 2,
     usage: "actus",
     run: async (client, message, args, user, text, prefix) => {
-        const arguments = message.content.slice(prefix.length).trim().split(' ');
-        const body = await Fortnite.NewsBR('fr')
-
-        let News = new Discord.MessageEmbed()
-        .setTitle("News")
-        .setImage(body.data.image)
-        .setColor("#2f3136")
-        .setTimestamp()
-        .setFooter('© Copyright Shop 2021', "https://shopbot.ml/assets/bot/logo.png")
         
-        message.channel.send(News)
+
+        const br = await Fortnite.NewsBR("fr")
+        const stw = await Fortnite.NewsSTW("fr")
+        const creative = await Fortnite.NewsCreative("fr")
+       
+        if(args[0] === "br"){
+            const News = new Discord.MessageEmbed()
+            .setTitle("News")
+            .setImage(br.data.image)
+            .setColor("RANDOM")
+            .setTimestamp()
+            .setFooter('Copyright Intermarket 2021')
+            message.channel.send(News)
+        }
+        else if(args[0] === "stw"){
+            let News = new Discord.MessageEmbed()
+            .setTitle("News")
+            .setImage(stw.data.image)
+            .setColor("RANDOM")
+            .setTimestamp()
+            .setFooter('Copyright Intermarket 2021')
+            message.channel.send(News)
+            
+            
+        }
+        
+        else if(args[0] === "creative"){
+            let News = new Discord.MessageEmbed()
+                .setTitle("News")
+                .setImage(creative.data.image)
+                .setColor("RANDOM")
+                .setTimestamp()
+                .setFooter('Copyright Intermarket 2021')
+            message.channel.send(News)
+                
+            
+            
+        }
+        else if (!args.length) {
+            let News = new Discord.MessageEmbed()
+                .setTitle("News")
+                .setImage(br.data.image)
+                .setColor("RANDOM")
+                .setTimestamp()
+                .setFooter('Copyright Intermarket 2021')
+                message.channel.send(News)
+        }
+        
+        
+        
+        
 
     }
 };
+
+///const STATUS = new Discord.MessageEmbed()
+///.setTitle("ERREUR | Les actus n'ont pas pu être atteints")
+///.setDescription("Nous vous prions de nous excuser mais les news ne sont pas atteignables. Merci de réessayer plus tard")
+///message.channel.send(STATUS)
+///console.log("br check bad")
