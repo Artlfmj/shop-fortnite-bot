@@ -7,14 +7,19 @@ const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
 
 module.exports = {
     name: "modes",
-    aliases: ["aliase"],
-    description: "Envoie map",
+    aliases: ["mode"],
+    description: "Envoie modes",
     category: "fortnite",
     guildOnly: true,
     cooldown: 2,
     usage: "modes",
     run: async (client, message, args, user, text, prefix) => {
-        
+        message.delete()
+        message.channel.startTyping()
+        const wait = new Discord.MessageEmbed()
+        .setTitle("Chargement des modes de jeux | VEUILLEZ PATIENTER...")
+        .setColor("#2f3136")
+        const msg = await message.channel.send(wait)
         const obj = await fortniteAPI.listCurrentGameModes()
         
         let ModesEmbed = new Discord.MessageEmbed()
@@ -28,7 +33,8 @@ module.exports = {
             }
         });
         
-        message.channel.send(ModesEmbed)
+        msg.edit(ModesEmbed)
+        message.channel.stopTyping()
 
     }
 };
