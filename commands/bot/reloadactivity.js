@@ -35,7 +35,7 @@ module.exports = {
                 break;
               case "📝": 
               msg.delete()
-              client.user.setActivity(`SHOP s!help | VERSION 1.2`, { type: "WATCHING"}) 
+               client.user.setActivity(`SHOP s!help | VERSION 1.2.2 | ${client.users.cache.size} membres| ${client.guilds.cache.size} serveurs`, { type: "WATCHING"}) 
                 break;
               case "❌": 
               msg.delete()
