@@ -44,7 +44,7 @@ module.exports = {
         }
         else if (!args.length) {
             let Map = new Discord.MessageEmbed()
-            .setTitle("Voici les sometiques mis à jour dans la derniere version")
+            .setTitle("Voici les cosmetiques mis à jour dans la derniere version")
             .setImage("https://shopbot.ml/assets/updated/1620update.jpeg")
             .setTimestamp()
             .setColor("RANDOM")

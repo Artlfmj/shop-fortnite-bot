@@ -25,19 +25,19 @@
             "upcoming" : [
                 {
                     "name": "Marked Man Bundle",
-                    "price" : "Unknown",
+                    "price" : "Unknown | Vbucks",
                     "description" : "Respectez le goutte à goutte ... ou bien. Réactif: nouvelle âme ajoutée à chaque élimination.",
                     "image" : "https://shopbot.ml/assets/bundles/marked.png"
                 },
                 {
                     "name": "Marshmello",
-                    "price" : "Unknown",
-                    "description" : "Unknown",
+                    "price" : "Unknown | Vbucks",
+                    "description" : "Unknown ",
                     "image" : "https://shopbot.ml/assets/bundles/marshmello.png"
                 },
                 {
                     "name": "Princess Felicity",
-                    "price" : "Unknown",
+                    "price" : "Unknown | Vbucks",
                     "description" : "Unkwown",
                     "image" : "https://shopbot.ml/assets/bundles/princess.png"
                 },
