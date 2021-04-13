@@ -1,0 +1,80 @@
+{
+    "status": "200",
+    "data": 
+        {
+            "disponible":[
+                {
+                    "name": "Pack Peloton Antirisque",
+                    "price" : "3.99€",
+                    "description" : "Le Centurion a toujours un plan. Suivez-le jusqu'à la victoire avec le pack Peloton antirisque.",
+                    "image" : "https://shopbot.ml/assets/bundles/pelton.jpeg"
+                },
+                {
+                    "name": "Pack Dernier Rire",
+                    "price" : "29,99€",
+                    "description" : "Devenez un antagoniste avec le pack Dernier rire ! Contient 3 tenues, 3 accessoires de dos, 4 pioches, 1 traînée de condensation et 1000 V-bucks !",
+                    "image" : "https://shopbot.ml/assets/bundles/last-laugh.jpg"
+                },
+                {
+                    "name": "Pack Legendes Ardentes",
+                    "price" : "15,99€",
+                    "description" : "Mettez le feu cette saison grâce au pack Légendes ardentes !",
+                    "image" : "https://shopbot.ml/assets/bundles/legendes-ardentes.jpeg"
+                }
+            ],
+            "upcoming" : [
+                {
+                    "name": "Marked Man Bundle",
+                    "price" : "Unknown",
+                    "description" : "Respectez le goutte à goutte ... ou bien. Réactif: nouvelle âme ajoutée à chaque élimination.",
+                    "image" : "https://shopbot.ml/assets/bundles/marked.png"
+                },
+                {
+                    "name": "Marshmello",
+                    "price" : "Unknown",
+                    "description" : "Unknown",
+                    "image" : "https://shopbot.ml/assets/bundles/marshmello.png"
+                },
+                {
+                    "name": "Princess Felicity",
+                    "price" : "Unknown",
+                    "description" : "Unkwown",
+                    "image" : "https://shopbot.ml/assets/bundles/princess.png"
+                },
+                {
+                    "name": "STW Robo Ray Pack",
+                    "price" : "15.99€",
+                    "description" : "Unknown",
+                    "image" : "https://shopbot.ml/assets/bundles/ray-sw.png"
+                },
+                {
+                    "name": "Major Lazer",
+                    "price" : "2,475 Vbucks",
+                    "description" : "Unknown",
+                    "image" : "https://shopbot.ml/assets/bundles/major-lazer.png"
+                },
+                {
+                    "name": "Rakanoo Locker Bundle",
+                    "price" : "Unknown | Estimated 2200 vbucks",
+                    "description" : "Unknown",
+                    "image" : "https://shopbot.ml/assets/bundles/rakanoo.png"
+                },
+                {
+                    "name": "Leleo's Locker Bundle",
+                    "price" : "Unknown | Estimated 2200 vbucks",
+                    "description" : "Unknown",
+                    "image" : "https://shopbot.ml/assets/bundles/leleo.png"
+                },
+                {
+                    "name": "Brie Larson's Locker Bundle",
+                    "price" : "Unknown | Estimated 2200 vbucks",
+                    "description" : "Unkwown",
+                    "image" : "https://shopbot.ml/assets/bundles/brie.png"
+                }
+                
+            ]
+
+            
+        }
+    
+}
