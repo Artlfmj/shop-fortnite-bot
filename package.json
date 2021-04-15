@@ -20,6 +20,8 @@
     "jsonfile": "^6.1.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
+    "sqlite": "^4.0.21",
+    "sqlite3": "^5.0.2",
     "superagent": "^6.1.0",
     "winston": "^3.3.3"
   },
