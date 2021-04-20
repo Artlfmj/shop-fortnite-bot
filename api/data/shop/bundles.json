@@ -10,6 +10,31 @@
                     "image" : "https://shopbot.ml/assets/bundles/pelton.jpeg"
                 },
                 {
+                    "name": "Leleo's Locker Bundle",
+                    "price" : "2000 Vbucks",
+                    "description" : "What's up guys! Hand-picked by @loud_leleo himself, check out his Locker Bundle in the Shop now.",
+                    "image" : "https://shopbot.ml/assets/bundles/leleo.png"
+                },
+                {
+                    "name": "Brie Larson's Locker Bundle",
+                    "price" : "2000 Vbucks",
+                    "description" : "Dream on and game like a hero with @brielarson’s hand-crafted Locker Bundle!",
+                    "image" : "https://shopbot.ml/assets/bundles/brie.png"
+                },
+                {
+                    "name": "STW Robo Ray Pack",
+                    "price" : "15.99€",
+                    "description" : "Unknown",
+                    "image" : "https://shopbot.ml/assets/bundles/ray-sw.png"
+                },
+                {
+                    "name": "Princess Felicity",
+                    "price" : "1800 Vbucks",
+                    "description" : "Presenting: Her royal fishness, Princess Felicity. Long may she reign Couronne",
+                    "image" : "https://shopbot.ml/assets/bundles/princess.png"
+                },
+                
+                {
                     "name": "Pack Dernier Rire",
                     "price" : "29,99€",
                     "description" : "Devenez un antagoniste avec le pack Dernier rire ! Contient 3 tenues, 3 accessoires de dos, 4 pioches, 1 traînée de condensation et 1000 V-bucks !",
@@ -35,18 +60,7 @@
                     "description" : "Unknown ",
                     "image" : "https://shopbot.ml/assets/bundles/marshmello.png"
                 },
-                {
-                    "name": "Princess Felicity",
-                    "price" : "Unknown | Vbucks",
-                    "description" : "Unkwown",
-                    "image" : "https://shopbot.ml/assets/bundles/princess.png"
-                },
-                {
-                    "name": "STW Robo Ray Pack",
-                    "price" : "15.99€",
-                    "description" : "Unknown",
-                    "image" : "https://shopbot.ml/assets/bundles/ray-sw.png"
-                },
+                
                 {
                     "name": "Major Lazer",
                     "price" : "2,475 Vbucks",
@@ -58,19 +72,9 @@
                     "price" : "Unknown | Estimated 2200 vbucks",
                     "description" : "Unknown",
                     "image" : "https://shopbot.ml/assets/bundles/rakanoo.png"
-                },
-                {
-                    "name": "Leleo's Locker Bundle",
-                    "price" : "Unknown | Estimated 2200 vbucks",
-                    "description" : "Unknown",
-                    "image" : "https://shopbot.ml/assets/bundles/leleo.png"
-                },
-                {
-                    "name": "Brie Larson's Locker Bundle",
-                    "price" : "Unknown | Estimated 2200 vbucks",
-                    "description" : "Unkwown",
-                    "image" : "https://shopbot.ml/assets/bundles/brie.png"
                 }
+                
+                
                 
             ]
 
