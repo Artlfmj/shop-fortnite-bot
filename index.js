@@ -27,6 +27,7 @@ eventhandler(client); //this is for event handling
 //fires each time the bot receives a message
 client.on("message", async message => {
 
+   
     if (message.author.bot) return;// if the message  author is a bot, return aka ignore the inputs
     if (!message.guild) return; //if the message is not in a guild (aka in dms), return aka ignore the inputs
 
