@@ -2,6 +2,7 @@
 const Discord = require('discord.js')
 const FortniteAPI = require("fortnite-api-io");
 const fs = require('fs');
+const BasePaginator = require('discord-paginator.js')
 const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
 
 module.exports = {
@@ -23,13 +24,38 @@ module.exports = {
         
        const itemsupcoming = await fortniteAPI.listUpcomingItems()
        const items = itemsupcoming.items
+       console.log(itemsupcoming)
        const Embed = new Discord.MessageEmbed()
        .setTitle("Voici les items qui sortiront prochainement")
        .setColor("#2f3136")
+       embeds = [
+           Embed
+       ]
        items.forEach(items => {
-            Embed.addField(items.name, "ID: " + items.id + "\n" + "Type d'objet: " +  items.type + "\n" + "Rareté: " + items.rarity + "\n" + "Description : " + items.description)
+           items.name = new Discord.MessageEmbed()
+           .setTitle(items.name)
+           .addField("ID", items.id , true)
+           .addField("Type d'objet" , items.type, true)
+           .addField("Rareté" , items.rarity, true)
+           .addField("Pack" , "Nom: " + items.set + "\nS'il a été leak vous pouvez le trouver en faisant la commande ``s!bundles`` ", true)
+           .addField("Description" , items.description, true)
+           .addField("Reactif", items.reactive , true)
+           .setImage(items.images.icon)
+           .setColor("#2f3136")
+            embeds.push(items.name)
+
+
         });
-        msg.edit(Embed)
+        const Paginator = new BasePaginator({
+            pages: embeds, //the pages
+            timeout: 120000, //the timeout for the reaction collector ended (in ms)
+            page: 'Page {current}/{total}', //Show the page counter to the message
+            filter: (reaction, user) => user.id == message.author.id //to filter the reaction collector
+        })
+    
+        Paginator.spawn(message.channel)
+        msg.delete()
+     
         message.channel.stopTyping()
     }
 }

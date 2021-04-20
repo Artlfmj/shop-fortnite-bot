@@ -3,6 +3,7 @@ const superagent = require('superagent');
 const Fortnite = require("fortnite-api-com")
 const FortniteAPI = require("fortnite-api-io");
 const fs = require('fs');
+const BasePaginator = require('discord-paginator.js')
 const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
 
 module.exports = {
@@ -23,17 +24,40 @@ module.exports = {
         const obj = await fortniteAPI.listCurrentGameModes()
         
         let ModesEmbed = new Discord.MessageEmbed()
-        .setTitle("Modes de jeux actuellements disponibles:")
-        .setDescription("Voici les modes de jeux disponbles sur Fortnite actuellement")
+        .setTitle("**Modes de jeux actuellements disponibles:**")
+        .setDescription("Voici les modes de jeux disponbles sur Fortnite actuellement \n\n**Pour les voir cliquez sur les fléches afin de vous diriger dans le menu interactif**")
         .setColor("#2f3136")
+        console.log(obj)
+
+        embeds = [
+            ModesEmbed
+        ]
         
         obj.modes.forEach(async (item) => {
             if(item.enabled && item.name && item.description){
-                ModesEmbed.addField(item.name , item.description + `\n\n[Cliquez ici pour l'image](${item.image})`, false )
+                item.name = new Discord.MessageEmbed()
+                .setTitle(`**${item.name}**`)
+                .setColor("#2f3136")
+                .addField("ID", item.id, false)
+                .addField("Description", item.description, false)
+                .addField("Taille d'équipe", item.maxTeamSize, false)
+                .addField("Type de mode de jeu", item.gameType, false)
+                .setImage(item.image)
+                
+                
+                embeds.push(item.name)
             }
         });
+        const Paginator = new BasePaginator({
+            pages: embeds, //the pages
+            timeout: 120000, //the timeout for the reaction collector ended (in ms)
+            page: 'Page {current}/{total}', //Show the page counter to the message
+            filter: (reaction, user) => user.id == message.author.id //to filter the reaction collector
+        })
+    
+        Paginator.spawn(message.channel)
         
-        msg.edit(ModesEmbed)
+        msg.delete()
         message.channel.stopTyping()
 
     }

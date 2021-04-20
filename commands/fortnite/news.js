@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const superagent = require('superagent');
 const FortniteAPI = require("fortnite-api-com");
+const BasePaginator = require('discord-paginator.js')
 const configfortnite = {
     apikey: "API-Key",
     language: "fr",
@@ -23,7 +24,7 @@ module.exports = {
         const br = await Fortnite.NewsBR("fr")
         const stw = await Fortnite.NewsSTW("fr")
         const creative = await Fortnite.NewsCreative("fr")
-       
+       message.delete()
         if(args[0] === "br"){
             const News = new Discord.MessageEmbed()
             .setTitle("News")
@@ -58,13 +59,41 @@ module.exports = {
             
         }
         else if (!args.length) {
-            let News = new Discord.MessageEmbed()
-                .setTitle("News")
+            let NewsBR = new Discord.MessageEmbed()
+                .setTitle("News BR")
                 .setImage(br.data.image)
                 .setColor("RANDOM")
                 .setTimestamp()
                 .setFooter('Copyright Intermarket 2021')
-                message.channel.send(News)
+               
+                let NewsCreative = new Discord.MessageEmbed()
+                .setTitle("News Creative")
+                .setImage(creative.data.image)
+                .setColor("RANDOM")
+                .setTimestamp()
+                .setFooter('Copyright Intermarket 2021')
+                
+                let NewsSTW = new Discord.MessageEmbed()
+                .setTitle("News STW")
+                .setImage(stw.data.image)
+                .setColor("RANDOM")
+                .setTimestamp()
+                .setFooter('Copyright Intermarket 2021')
+                
+                embeds = [
+                    NewsBR,
+                    NewsCreative,
+                    NewsSTW
+                ]
+                const Paginator = new BasePaginator({
+                    pages: embeds, //the pages
+                    timeout: 120000, //the timeout for the reaction collector ended (in ms)
+                    page: 'Page {current}/{total}', //Show the page counter to the message
+                    filter: (reaction, user) => user.id == message.author.id //to filter the reaction collector
+                })
+            
+                Paginator.spawn(message.channel)
+
         }
         
         

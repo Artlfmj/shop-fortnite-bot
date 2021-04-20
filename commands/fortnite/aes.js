@@ -30,6 +30,8 @@ module.exports = {
         .addField("Version principale:", AES.data.mainKey,true)
         .setColor("#2f3136")
         const dyn = AES.data.dynamicKeys
+        console.log(AES)
+        console.log(dyn)
         dyn.forEach(dyn => {
             aes.addField(dyn.pakFilename, dyn.key, false )
         });
