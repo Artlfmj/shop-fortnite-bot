@@ -24,7 +24,7 @@ module.exports = {
         
        const itemsupcoming = await fortniteAPI.listUpcomingItems()
        const items = itemsupcoming.items
-       console.log(itemsupcoming)
+       
        const Embed = new Discord.MessageEmbed()
        .setTitle("Voici les items qui sortiront prochainement")
        .setColor("#2f3136")
