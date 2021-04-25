@@ -1,9 +1,10 @@
 //Here the command starts
 const Discord = require('discord.js')
 const FortniteAPI = require("fortnite-api-io");
+const config = require('../../config.json')
 const fs = require('fs');
 const BasePaginator = require('discord-paginator.js')
-const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
+const fortniteAPI = new FortniteAPI(config.fortniteapi)
 
 module.exports = {
     //definition

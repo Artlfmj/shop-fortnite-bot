@@ -1,9 +1,10 @@
 const Discord = require('discord.js')
 
 const { stripIndents } = require("common-tags");
+const config = require("../../config.json")
 
 const Client = require("fortnite");
-const ft = new Client("c90fc89e-52fb-4fb5-a97d-9bcd26671800");
+const ft = new Client(config.fn-tracker)   ;
 
 module.exports = {
     name: "fortnite",

@@ -1,10 +1,11 @@
 const Discord = require('discord.js')
 const superagent = require('superagent');
 const Fortnite = require("fortnite-api-com")
+const config = require('../../config.json')
 const FortniteAPI = require("fortnite-api-io");
 const fs = require('fs');
 const BasePaginator = require('discord-paginator.js')
-const fortniteAPI = new FortniteAPI("5322113d-12065afe-cd591053-39cf2335")
+const fortniteAPI = new FortniteAPI(config.fortniteapi)
 
 module.exports = {
     name: "modes",
