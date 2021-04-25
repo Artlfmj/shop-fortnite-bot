@@ -36,3 +36,4 @@ commands/fortnite/assets/bg-news.jpg
 commands/fortnite/testt.js
 commands/fortnite/testt.js
 config.json
+*.json
