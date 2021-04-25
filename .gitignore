@@ -4,3 +4,17 @@ node_modules
 config.json
 config.json
 *.zip
+assets/bg-news.jpg
+assets/bg-shop.jpg
+assets/font.otf
+assets/series/ColumbusSeries.png
+assets/series/CreatorCollabSeries.png
+assets/series/CUBESeries.png
+assets/series/DCUSeries.png
+assets/series/FrozenSeries.png
+assets/series/LavaSeries.png
+assets/series/MarvelSeries.png
+assets/series/PlatformSeries.png
+assets/series/ShadowSeries.png
+assets/series/SlurpSeries.png
+assets/vbuck.png
