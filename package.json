@@ -1,13 +1,15 @@
 {
-  "name": "discordjs-bot-template",
+  "name": "shop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "ascii-table": "^0.0.9",
+    "axios": "^0.21.1",
     "canvas": "^2.7.0",
     "common-tags": "^1.8.0",
     "cron": "^1.8.2",
+    "date-events": "^1.0.1",
     "discord-canvas": "^1.4.1",
     "discord-paginator.js": "^1.0.2",
     "discord.js": "^12.5.1",
@@ -17,8 +19,11 @@
     "fortnite-api-com": "^2.2.1",
     "fortnite-api-io": "^1.8.0",
     "fs": "0.0.1-security",
+    "fs-extra": "^9.1.0",
+    "ftp-deploy": "^2.4.1",
     "got": "^11.8.1",
     "http": "0.0.1-security",
+    "instagram-private-api": "^1.44.1",
     "jsonfile": "^6.1.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
@@ -32,6 +37,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "Tomato#6966",
+  "author": "Artlfmj#2660",
   "license": "ISC"
 }
