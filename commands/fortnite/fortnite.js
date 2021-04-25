@@ -4,7 +4,7 @@ const { stripIndents } = require("common-tags");
 const config = require("../../config.json")
 
 const Client = require("fortnite");
-const ft = new Client(config.fn-tracker)   ;
+const ft = new Client(config.fntracker)   ;
 
 module.exports = {
     name: "fortnite",
