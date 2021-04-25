@@ -27,7 +27,7 @@ module.exports = {
         .setTitle("**Modes de jeux actuellements disponibles:**")
         .setDescription("Voici les modes de jeux disponbles sur Fortnite actuellement \n\n**Pour les voir cliquez sur les fléches afin de vous diriger dans le menu interactif**")
         .setColor("#2f3136")
-        console.log(obj)
+        
 
         embeds = [
             ModesEmbed
