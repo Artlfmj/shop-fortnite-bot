@@ -12,7 +12,7 @@
     "fortnite": "^4.3.2",
     "fortnite-api-io": "^1.8.0",
     "fs": "0.0.1-security",
-    "got": "^11.8.1",
+    "got": "^12.5.3",
     "http": "0.0.1-security",
     "jsonfile": "^6.1.0",
     "moment": "^2.29.1",
